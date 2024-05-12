@@ -1,7 +1,8 @@
 extends Node
 
 @export var snake_scene : PackedScene
-
+@onready var eating = $eat 
+@onready var die = $die 
 #game variables
 var score : int
 var game_started : bool = false
@@ -27,6 +28,9 @@ var left = Vector2(-1, 0)
 var right = Vector2(1, 0)
 var move_direction : Vector2
 var can_move: bool
+
+#audio variables
+
 
 # Called when game starts
 func _ready():
@@ -120,6 +124,7 @@ func check_self_eaten():
 func check_food_eaten():
 	#if snake eats the food, add a segment and move the food
 	if snake_data[0] == food_pos:
+		eating.play()
 		score += 1
 		$Hud.get_node("ScoreLabel").text = "SCORE: " + str(score)
 		add_segment(old_data[-1])
@@ -137,10 +142,12 @@ func move_food():
 	regen_food = true
 # ends game and displays a game over screen
 func end_game():
+	can_move = false
+	$die.play()
 	$GameOverMenu.show()
 	$MoveTimer.stop()
 	game_started = false
-	get_tree().paused = true
+	
 
 # when play again pressed, restart game
 func _on_game_over_menu_restart():

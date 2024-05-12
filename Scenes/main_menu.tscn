@@ -80,10 +80,10 @@ offset_top = 536.0
 offset_right = 848.0
 offset_bottom = 688.0
 theme_override_fonts/font = ExtResource("2_aw3x1")
-theme_override_font_sizes/font_size = 140
+theme_override_font_sizes/font_size = 150
 theme_override_styles/normal = SubResource("StyleBoxFlat_b4vr7")
 disabled = true
-text = "customization"
+text = "how to play"
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 176.0
