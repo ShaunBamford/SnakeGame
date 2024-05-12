@@ -13,19 +13,14 @@
 script = ExtResource("1_7mpgv")
 snake_scene = ExtResource("2_rn20v")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(506, 524)
-scale = Vector2(1.054, 1.054)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(500, 550)
 texture = ExtResource("2_lyphs")
 
 [node name="Hud" parent="." instance=ExtResource("3_6vxjv")]
 
 [node name="MoveTimer" type="Timer" parent="."]
 wait_time = 0.1
-
-[node name="Food" type="Sprite2D" parent="."]
-texture = ExtResource("5_5n6ia")
-offset = Vector2(25, 25)
 
 [node name="GameOverMenu" parent="." instance=ExtResource("6_mc57b")]
 
@@ -38,6 +33,10 @@ pitch_scale = 2.28
 stream = ExtResource("8_frsaj")
 volume_db = -11.763
 pitch_scale = 2.28
+
+[node name="Food" type="Sprite2D" parent="."]
+texture = ExtResource("5_5n6ia")
+offset = Vector2(25, 25)
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]

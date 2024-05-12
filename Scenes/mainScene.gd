@@ -6,6 +6,9 @@ extends Node
 #game variables
 var score : int
 var game_started : bool = false
+var highscore : int = 0
+
+const SAVE_FILE_PATH = "user://savedata.save"
 
 #grid variables
 var cells : int = 20
@@ -41,7 +44,8 @@ func new_game():
 	get_tree().call_group("segments", "queue_free")
 	$GameOverMenu.hide()
 	score = 0
-	$Hud.get_node("ScoreLabel").text = "SCORE: " + str(score)
+	$Hud.get_node("ScoreLabel").text = str(score)
+	$Hud.get_node("HighScoreLabel").text = str(score)
 	move_direction = up
 	can_move = true
 	generate_snake()
@@ -126,7 +130,10 @@ func check_food_eaten():
 	if snake_data[0] == food_pos:
 		eating.play()
 		score += 1
-		$Hud.get_node("ScoreLabel").text = "SCORE: " + str(score)
+		if score >= highscore:
+			highscore = score
+		$Hud.get_node("ScoreLabel").text = str(score)
+		$Hud.get_node("HighScoreLabel").text = str(score)
 		add_segment(old_data[-1])
 		move_food()
 
@@ -142,6 +149,9 @@ func move_food():
 	regen_food = true
 # ends game and displays a game over screen
 func end_game():
+	
+	if score >= highscore:
+		highscore = score
 	can_move = false
 	$die.play()
 	$GameOverMenu.show()
@@ -152,3 +162,5 @@ func end_game():
 # when play again pressed, restart game
 func _on_game_over_menu_restart():
 	new_game()
+	
+

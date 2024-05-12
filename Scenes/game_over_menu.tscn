@@ -38,10 +38,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.5
-offset_top = -130.0
-offset_right = 133.5
-offset_bottom = -60.0
+offset_left = -133.0
+offset_top = -127.0
+offset_right = 134.0
+offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -52,10 +52,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RestartButton" type="Button" parent="."]
-offset_left = 375.0
-offset_top = 488.0
-offset_right = 625.0
-offset_bottom = 551.0
+offset_left = 367.0
+offset_top = 481.0
+offset_right = 617.0
+offset_bottom = 544.0
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_gi1nq")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_wbrpy")
@@ -67,17 +68,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = 47.0
-offset_right = 125.0
-offset_bottom = 110.0
+offset_left = -133.0
+offset_top = 41.0
+offset_right = 117.0
+offset_bottom = 104.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_gi1nq")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_wbrpy")
 text = "Main Menu
 "
+
+[node name="ResultLabel2" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -143.0
+offset_right = 133.5
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gi1nq")
+theme_override_font_sizes/font_size = 72
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
