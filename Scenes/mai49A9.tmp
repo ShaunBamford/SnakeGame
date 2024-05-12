@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://c58ic3masjfyn"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_bnn5l"]
+[ext_resource type="Texture2D" uid="uid://dnyd06e835fwg" path="res://Images/bg.png" id="1_yj8vs"]
+[ext_resource type="FontFile" uid="uid://dtl62glx7firj" path="res://Fonts/Gamer.ttf" id="2_aw3x1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1i1wb"]
+bg_color = Color(0.0509804, 0.176471, 0.215686, 1)
+shadow_size = 25
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4vr7"]
+bg_color = Color(0.0509804, 0.176471, 0.215686, 1)
+shadow_size = 25
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dbc8"]
+bg_color = Color(0.0509804, 0.176471, 0.215686, 1)
+border_color = Color(0, 0, 0, 1)
+shadow_size = 25
+shadow_offset = Vector2(10, 10)
+
+[node name="mainMenu" type="Node2D"]
+script = ExtResource("1_bnn5l")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(520, 576)
+scale = Vector2(1.476, 1.476)
+texture = ExtResource("1_yj8vs")
+
+[node name="Start Text" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 152.0
+offset_top = -56.0
+offset_right = 902.0
+offset_bottom = 261.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.72549, 0.211765, 0.823529, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aw3x1")
+theme_override_font_sizes/font_size = 400
+text = "Snake"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start Text" type="Label" parent="Start Text"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -431.0
+offset_top = 200.0
+offset_right = 969.0
+offset_bottom = 517.0
+grow_horizontal = 2
+rotation = -0.13439
+theme_override_colors/font_color = Color(0.87451, 0.827451, 0.223529, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_aw3x1")
+theme_override_font_sizes/font_size = 100
+text = "but better"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 344.0
+offset_right = 848.0
+offset_bottom = 496.0
+theme_override_fonts/font = ExtResource("2_aw3x1")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1wb")
+text = "Start"
+
+[node name="Customization" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 536.0
+offset_right = 848.0
+offset_bottom = 688.0
+theme_override_fonts/font = ExtResource("2_aw3x1")
+theme_override_font_sizes/font_size = 140
+theme_override_styles/normal = SubResource("StyleBoxFlat_b4vr7")
+text = "customization"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 728.0
+offset_right = 848.0
+offset_bottom = 880.0
+theme_override_fonts/font = ExtResource("2_aw3x1")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_1dbc8")
+text = "quit
+"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

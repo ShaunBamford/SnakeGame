@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://btj3sbcmaligh"]
+
+[ext_resource type="FontFile" uid="uid://dtl62glx7firj" path="res://Fonts/Gamer.ttf" id="1_gi1nq"]
+[ext_resource type="Script" path="res://Scenes/game_over_menu.gd" id="1_msgpj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32731"]
+bg_color = Color(0, 0.176471, 0.313726, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 5
+shadow_offset = Vector2(10, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbrpy"]
+bg_color = Color(0.182251, 0.403072, 0.696365, 1)
+
+[node name="GameOverMenu" type="CanvasLayer"]
+script = ExtResource("1_msgpj")
+
+[node name="GameOverPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = -140.5
+offset_right = 304.0
+offset_bottom = 140.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_32731")
+
+[node name="ResultLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -133.5
+offset_top = -130.0
+offset_right = 133.5
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gi1nq")
+theme_override_font_sizes/font_size = 72
+text = "GAME OVER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="."]
+offset_left = 375.0
+offset_top = 488.0
+offset_right = 625.0
+offset_bottom = 551.0
+theme_override_fonts/font = ExtResource("1_gi1nq")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_wbrpy")
+text = "Play Again?"
+
+[node name="MainMenu" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = 47.0
+offset_right = 125.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_gi1nq")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_wbrpy")
+text = "Main Menu
+"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

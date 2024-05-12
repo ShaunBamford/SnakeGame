@@ -5,25 +5,27 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp32p"]
 bg_color = Color(9.62615e-07, 0.669435, 0.794472, 1)
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Hud" type="CanvasLayer"]
 
 [node name="ScorePanel" type="Panel" parent="."]
-offset_right = 801.0
-offset_bottom = 40.0
+offset_left = -126.0
+offset_right = 1063.0
+offset_bottom = 48.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pp32p")
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -193.0
-offset_top = -62.0
-offset_right = -92.0
-offset_bottom = -23.0
+offset_left = -76.0
+offset_top = -4.0
+offset_right = 85.0
+offset_bottom = 44.0
 grow_horizontal = 2
-scale = Vector2(4, 4)
 size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_svfx5")
+theme_override_font_sizes/font_size = 59
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
