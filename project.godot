@@ -13,6 +13,8 @@ config_version=5
 config/name="Snake Game"
 config/version="1.0"
 run/main_scene="res://Scenes/main_menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="SnakeGame"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0.168257, 0.147212, 1)
 boot_splash/show_image=false
@@ -26,7 +28,7 @@ Music="*res://Scenes/music.tscn"
 
 window/size/viewport_width=1000
 window/size/viewport_height=1050
-window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [input]
 

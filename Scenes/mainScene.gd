@@ -40,12 +40,15 @@ func _ready():
 	new_game()
 	
 func new_game():
+	load_game()
 	get_tree().paused = false
 	get_tree().call_group("segments", "queue_free")
 	$GameOverMenu.hide()
-	score = 0
+	# Update the score to the highscore if it's greater than the current score
+	if highscore > score:
+		score = 0
 	$Hud.get_node("ScoreLabel").text = str(score)
-	$Hud.get_node("HighScoreLabel").text = str(score)
+	$Hud.get_node("HighScoreLabel").text = str(highscore)
 	move_direction = up
 	can_move = true
 	generate_snake()
@@ -133,7 +136,7 @@ func check_food_eaten():
 		if score >= highscore:
 			highscore = score
 		$Hud.get_node("ScoreLabel").text = str(score)
-		$Hud.get_node("HighScoreLabel").text = str(score)
+		$Hud.get_node("HighScoreLabel").text = str(highscore)
 		add_segment(old_data[-1])
 		move_food()
 
@@ -149,7 +152,7 @@ func move_food():
 	regen_food = true
 # ends game and displays a game over screen
 func end_game():
-	
+	save_game()	
 	if score >= highscore:
 		highscore = score
 	can_move = false
@@ -163,4 +166,33 @@ func end_game():
 func _on_game_over_menu_restart():
 	new_game()
 	
-
+	
+func save():
+	var save_dict = {
+		"highscore" : highscore
+	}
+	return save_dict
+	
+func save_game():
+	var save_game = FileAccess.open("user://data.save", FileAccess.WRITE)
+	var jsonString = JSON.stringify(save())
+	
+	save_game.store_line(jsonString)
+	
+func load_game():
+	if not FileAccess.file_exists("user://data.save"):
+		return
+		
+	var save_game = FileAccess.open("user://data.save", FileAccess.READ)
+	var jsonString = save_game.get_as_text() # This gets the entire file text.
+	var json = JSON.new()
+	var parse_result = json.parse(jsonString)
+	
+	if parse_result == OK:
+		var node_data = json.get_data()
+		highscore = node_data["highscore"]
+		highscore = int(highscore) # Access the highscore from the dictionary.
+		print("Highscore: ", highscore)
+		$Hud.get_node("HighScoreLabel").text = str(highscore)
+	else:
+		print("Failed to parse JSON.")
