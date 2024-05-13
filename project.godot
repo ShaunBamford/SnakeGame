@@ -23,12 +23,15 @@ config/icon="res://Images/apple.svg"
 [autoload]
 
 Music="*res://Scenes/music.tscn"
+GuiAutoload="*res://Scripts/Autoload/gui_autoload.gd"
 
 [display]
 
 window/size/viewport_width=1000
 window/size/viewport_height=1050
-window/stretch/mode="canvas_items"
+window/size/resizable=false
+window/stretch/mode="viewport"
+window/per_pixel_transparency/allowed=true
 
 [input]
 
@@ -67,5 +70,6 @@ ui_down={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

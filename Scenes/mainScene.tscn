@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://cl44g8gjy210v"]
 
-[ext_resource type="Script" path="res://Scenes/mainScene.gd" id="1_7mpgv"]
+[ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_7mpgv"]
 [ext_resource type="Texture2D" uid="uid://dnyd06e835fwg" path="res://Images/bg.png" id="2_lyphs"]
 [ext_resource type="PackedScene" uid="uid://dp2shiv3xso08" path="res://Scenes/snake_segment.tscn" id="2_rn20v"]
 [ext_resource type="PackedScene" uid="uid://cr7bf6qjrqmqc" path="res://Scenes/hud.tscn" id="3_6vxjv"]
 [ext_resource type="Texture2D" uid="uid://5hifnakxcwsu" path="res://Images/apple.png" id="5_5n6ia"]
 [ext_resource type="PackedScene" uid="uid://btj3sbcmaligh" path="res://Scenes/game_over_menu.tscn" id="6_mc57b"]
-[ext_resource type="AudioStream" uid="uid://d20yi3bkyeyj8" path="res://sounds/eat.wav" id="7_pwhb3"]
-[ext_resource type="AudioStream" uid="uid://cu5rvr6yohrli" path="res://sounds/death.mp3" id="8_frsaj"]
+[ext_resource type="AudioStream" uid="uid://d20yi3bkyeyj8" path="res://Sounds/eat.wav" id="7_pwhb3"]
+[ext_resource type="AudioStream" uid="uid://cu5rvr6yohrli" path="res://Sounds/death.mp3" id="8_frsaj"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mpgv")
@@ -28,11 +28,13 @@ wait_time = 0.1
 stream = ExtResource("7_pwhb3")
 volume_db = -11.763
 pitch_scale = 2.28
+bus = &"sfx"
 
 [node name="die" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_frsaj")
 volume_db = -11.763
 pitch_scale = 2.28
+bus = &"sfx"
 
 [node name="Food" type="Sprite2D" parent="."]
 texture = ExtResource("5_5n6ia")

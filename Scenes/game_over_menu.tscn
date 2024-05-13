@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btj3sbcmaligh"]
 
 [ext_resource type="FontFile" uid="uid://dtl62glx7firj" path="res://Fonts/Gamer.ttf" id="1_gi1nq"]
-[ext_resource type="Script" path="res://Scenes/game_over_menu.gd" id="1_msgpj"]
+[ext_resource type="Script" path="res://Scripts/game_over_menu.gd" id="1_msgpj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32731"]
 bg_color = Color(0, 0.176471, 0.313726, 1)

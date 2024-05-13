@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://diabb61ufikfn"]
 
-[ext_resource type="Script" path="res://Scenes/how_to_play.gd" id="1_p0k81"]
+[ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="1_p0k81"]
 [ext_resource type="Texture2D" uid="uid://dnyd06e835fwg" path="res://Images/bg.png" id="2_4o2cw"]
 [ext_resource type="FontFile" uid="uid://dtl62glx7firj" path="res://Fonts/Gamer.ttf" id="3_o07v4"]
 [ext_resource type="Texture2D" uid="uid://5hifnakxcwsu" path="res://Images/apple.png" id="4_wgrjj"]
