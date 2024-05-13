@@ -66,35 +66,46 @@ vertical_alignment = 1
 
 [node name="Start" type="Button" parent="."]
 offset_left = 176.0
-offset_top = 344.0
+offset_top = 280.0
 offset_right = 848.0
-offset_bottom = 496.0
+offset_bottom = 432.0
 theme_override_fonts/font = ExtResource("2_aw3x1")
 theme_override_font_sizes/font_size = 150
 theme_override_styles/normal = SubResource("StyleBoxFlat_1i1wb")
 text = "Start"
 
-[node name="Customization" type="Button" parent="."]
+[node name="How to Play" type="Button" parent="."]
 offset_left = 176.0
-offset_top = 536.0
+offset_top = 664.0
 offset_right = 848.0
-offset_bottom = 688.0
+offset_bottom = 816.0
 theme_override_fonts/font = ExtResource("2_aw3x1")
 theme_override_font_sizes/font_size = 150
 theme_override_styles/normal = SubResource("StyleBoxFlat_b4vr7")
-disabled = true
 text = "how to play"
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 176.0
-offset_top = 728.0
+offset_top = 864.0
 offset_right = 848.0
-offset_bottom = 880.0
+offset_bottom = 1016.0
 theme_override_fonts/font = ExtResource("2_aw3x1")
 theme_override_font_sizes/font_size = 150
 theme_override_styles/normal = SubResource("StyleBoxFlat_1dbc8")
 text = "quit
 "
 
+[node name="Settings" type="Button" parent="."]
+offset_left = 176.0
+offset_top = 472.0
+offset_right = 848.0
+offset_bottom = 624.0
+theme_override_fonts/font = ExtResource("2_aw3x1")
+theme_override_font_sizes/font_size = 150
+theme_override_styles/normal = SubResource("StyleBoxFlat_1i1wb")
+disabled = true
+text = "Settings"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="How to Play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
