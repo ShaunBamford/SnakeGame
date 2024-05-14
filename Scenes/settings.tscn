@@ -56,18 +56,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 34
 text = "Resolution"
 
-[node name="Start Text" type="Label" parent="Panel"]
-layout_mode = 2
-offset_right = 1000.0
-offset_bottom = 254.0
-theme_override_colors/font_color = Color(0.72549, 0.211765, 0.823529, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_gva1e")
-theme_override_font_sizes/font_size = 320
-text = "Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="back" type="Button" parent="."]
 layout_mode = 0
 offset_left = 174.0
@@ -121,6 +109,24 @@ horizontal_alignment = 1
 [node name="volume3" parent="VBoxContainer" instance=ExtResource("4_4jeb0")]
 layout_mode = 2
 bus_name = "sfx"
+
+[node name="Start Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -404.0
+offset_top = -8.0
+offset_right = 456.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.72549, 0.211765, 0.823529, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gva1e")
+theme_override_font_sizes/font_size = 320
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="item_selected" from="Panel/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

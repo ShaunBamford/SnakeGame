@@ -3,6 +3,7 @@ extends Node
 @export var snake_scene : PackedScene
 @onready var eating = $eat 
 @onready var die = $die 
+@onready var move = $move
 #game variables
 var score : int
 var game_started : bool = false
@@ -78,21 +79,25 @@ func move_snake():
 	if can_move:
 		#update movement from keypresses
 		if Input.is_action_just_pressed("ui_down") and move_direction != up:
+			$move.play()
 			move_direction = down
 			can_move = false
 			if not game_started:
 				start_game()
 		if Input.is_action_just_pressed("ui_up") and move_direction != down:
+			$move.play()
 			move_direction = up
 			can_move = false
 			if not game_started:
 				start_game()
 		if Input.is_action_just_pressed("ui_left") and move_direction != right:
+			$move.play()
 			move_direction = left
 			can_move = false
 			if not game_started:
 				start_game()
 		if Input.is_action_just_pressed("ui_right") and move_direction != left:
+			$move.play()
 			move_direction = right
 			can_move = false
 			if not game_started:

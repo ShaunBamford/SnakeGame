@@ -23,7 +23,6 @@ config/icon="res://Images/apple.svg"
 [autoload]
 
 Music="*res://Scenes/music.tscn"
-GuiAutoload="*res://Scripts/Autoload/gui_autoload.gd"
 
 [display]
 

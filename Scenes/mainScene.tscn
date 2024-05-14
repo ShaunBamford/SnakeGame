@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl44g8gjy210v"]
+[gd_scene load_steps=10 format=3 uid="uid://cl44g8gjy210v"]
 
 [ext_resource type="Script" path="res://Scripts/mainScene.gd" id="1_7mpgv"]
 [ext_resource type="Texture2D" uid="uid://dnyd06e835fwg" path="res://Images/bg.png" id="2_lyphs"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://btj3sbcmaligh" path="res://Scenes/game_over_menu.tscn" id="6_mc57b"]
 [ext_resource type="AudioStream" uid="uid://d20yi3bkyeyj8" path="res://Sounds/eat.wav" id="7_pwhb3"]
 [ext_resource type="AudioStream" uid="uid://cu5rvr6yohrli" path="res://Sounds/death.mp3" id="8_frsaj"]
+[ext_resource type="AudioStream" uid="uid://diq5all3g5ja0" path="res://Sounds/move.mp3" id="9_4tyxp"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_7mpgv")
@@ -39,6 +40,12 @@ bus = &"sfx"
 [node name="Food" type="Sprite2D" parent="."]
 texture = ExtResource("5_5n6ia")
 offset = Vector2(25, 25)
+
+[node name="move" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_4tyxp")
+volume_db = -15.958
+pitch_scale = 0.25
+bus = &"sfx"
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
 [connection signal="restart" from="GameOverMenu" to="." method="_on_game_over_menu_restart"]
