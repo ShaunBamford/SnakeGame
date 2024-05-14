@@ -158,7 +158,7 @@ func move_food():
 # ends game and displays a game over screen
 func end_game():
 	save_game()	
-	
+	$GameOverMenu._ready()
 	if score >= highscore:
 		highscore = score
 	can_move = false

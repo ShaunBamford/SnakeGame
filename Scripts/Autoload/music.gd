@@ -9,7 +9,7 @@ func _ready():
 
 	
 
-
+# Plays music forever
 func _on_finished():
 	$".".play()
 	print("REPLAYING MUSIC")

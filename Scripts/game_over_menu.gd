@@ -4,7 +4,7 @@ extends CanvasLayer
 
 func _ready():
 	# This ensures that the button grabs focus after everything is ready.
-	restartbutton.call_deferred("grab_focus")
+	restartbutton.grab_focus()
 
 signal restart
 
