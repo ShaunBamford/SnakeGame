@@ -7,6 +7,7 @@ extends Control
 func _ready():
 	add_resolutions()
 	update_button_values()
+	$back.grab_focus()
 	
 var resolutions = {
 	"400x420": Vector2i(400, 420),
