@@ -97,7 +97,7 @@ offset_bottom = 128.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_o07v4")
 theme_override_font_sizes/font_size = 64
-text = "3. Collect power-ups to maximize your score"
+text = "3. use wasD or controller to move"
 horizontal_alignment = 1
 vertical_alignment = 1
 

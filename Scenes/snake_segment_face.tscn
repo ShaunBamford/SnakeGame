@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba7sklns3qwww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ay1q"]
+bg_color = Color(0.2, 0.776471, 0, 0.784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.776471, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="snakeSegment" type="Panel" groups=["segments"]]
+offset_right = 50.0
+offset_bottom = 50.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ay1q")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 37
+text = ":D"

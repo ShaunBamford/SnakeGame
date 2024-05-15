@@ -74,6 +74,7 @@ func add_segment(pos):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	move_snake()
+	snake_data.slice(2)
 	
 func move_snake():
 	if can_move:
